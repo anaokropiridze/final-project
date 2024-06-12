@@ -1,0 +1,84 @@
+<div class="main-content">
+  <div class="main-up">
+    <h2>CATEGORIES</h2>
+    <ul>
+      <li *ngFor="let item of categories">
+        <a>{{ item.name }}</a>
+      </li>
+    </ul>
+    <div class="line"></div>
+  </div>
+  <div class="main-cards"></div>
+</div>
+<div class="meal-cards">
+  <!-- filter -->
+  <div class="filter-container">
+    <form id="food-filter">
+      <div class="filter-group">
+        <label for="spiciness">Spiciness:</label>
+        <select id="spiciness" name="spiciness">
+          <option value="all">All</option>
+          <option value="mild">Mild</option>
+          <option value="medium">Medium</option>
+          <option value="hot">Hot</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="nutty">Contains Nuts:</label>
+        <select id="nutty" name="nutty">
+          <option value="all">All</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="vegetarian">Vegetarian:</label>
+        <select id="vegetarian" name="vegetarian">
+          <option value="all">All</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+
+      <div class="filter-actions">
+        <button type="button" id="reset-button">Reset</button>
+        <button type="submit" id="apply-button">Apply Filter</button>
+      </div>
+    </form>
+  </div>
+  <!-- filter end -->
+
+  <div *ngFor="let product of products">
+    <div class="meal-card">
+      <img [src]="product.image" alt="Meal Photo" class="meal-photo" />
+      <div class="meal-details">
+        <h2 class="meal-title">{{ product.name }}</h2>
+        <p class="meal-price">{{ product.price }}</p>
+        <p class="meal-spiciness">
+          Spiciness:
+          <span class="spicy">{{ "🌶️".repeat(product.spiciness) }}</span>
+        </p>
+        <p class="meal-nuts">
+          Contains Nuts:
+          <span class="yes">{{ product.nuts ? "Yes" : "No" }}</span>
+        </p>
+        <p class="meal-vegetarian">
+          Vegetarian:
+          <span class="no">{{ product.vegeterian ? "Yes" : "No" }}</span>
+        </p>
+        <button
+          (click)="addToCart(product.id, product.price)"
+          class="order-now"
+        >
+          Order Now
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <app-content>
+
+</app-content> -->

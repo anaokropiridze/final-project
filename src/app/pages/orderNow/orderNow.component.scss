@@ -1,0 +1,172 @@
+.chosen-meal {
+  max-width: 1170px;
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.order-now {
+  background-color: #ff2222;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #e64a19;
+  }
+}
+.order-now-delete {
+  background-color: #cd5c5c;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  margin-left: 5px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #e64a19;
+  }
+}
+.order-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  .meal {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    input {
+      margin-right: 10px;
+    }
+
+    label {
+      cursor: pointer;
+    }
+  }
+
+  .summary {
+    margin-top: 20px;
+
+    p {
+      margin: 5px 0;
+    }
+  }
+
+  button {
+    background-color: #ff2222;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #e64a19;
+    }
+  }
+}
+
+//
+.meal-cards {
+  margin: 20px auto;
+  max-width: 1170px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.meal-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 250px;
+  max-height: 480px;
+  height: 100%;
+  text-align: center;
+
+  .meal-photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .meal-details {
+    padding: 16px;
+
+    .meal-title {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .meal-price {
+      font-size: 20px;
+      color: #4caf50;
+      margin: 8px 0;
+    }
+
+    .meal-spiciness,
+    .meal-nuts,
+    .meal-vegetarian {
+      font-size: 16px;
+      margin: 4px 0;
+
+      .spicy {
+        color: #ff5722;
+      }
+
+      .yes {
+        color: #d32f2f;
+      }
+
+      .no {
+        color: #4caf50;
+      }
+    }
+
+    .order-now {
+      background-color: #ff2222;
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e64a19;
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="payment-container">
+  <h2>Payment Details</h2>
+  <form class="payment-form" onsubmit="processPayment(event)">
+    <div class="form-group">
+      <label for="card-number">Card Number</label>
+      <input
+        type="text"
+        id="card-number"
+        name="card-number"
+        maxlength="16"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="card-code">Card Code (CVV)</label>
+      <input
+        type="text"
+        id="card-code"
+        name="card-code"
+        maxlength="3"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount to be Paid</label>
+      <h2>{{ getTotalPrice() | currency : "USD" }}</h2>
+      <!-- <input type="text" id="amount" name="amount" readonly [value]="amount" /> -->
+    </div>
+    <button type="submit">Pay Now</button>
+  </form>
+</div>

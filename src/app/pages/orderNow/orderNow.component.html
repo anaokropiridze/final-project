@@ -1,0 +1,43 @@
+<div class="chosen-meal">
+  <div class="meal-cards">
+    <div class="meal-card" *ngFor="let item of cartItems">
+      <img [src]="item.product.image" alt="Meal Photo" class="meal-photo" />
+      <div class="meal-details">
+        <h2 class="meal-title">{{ item.product.name }}</h2>
+        <p class="meal-price">{{ item.product.price }}</p>
+        <p class="meal-spiciness">
+          Spiciness:
+          <span class="spicy">{{ "🌶️".repeat(item.product.spiciness) }}</span>
+        </p>
+        <p class="meal-nuts">
+          Contains Nuts:
+          <span class="yes">{{ item.product.nuts ? "Yes" : "No" }}</span>
+        </p>
+        <p class="meal-vegetarian">
+          Vegetarian:
+          <span class="no">{{ item.product.vegeterian ? "Yes" : "No" }}</span>
+        </p>
+        <button class="order-now">Order Now</button>
+        <button
+          (click)="deleteFromCart(item.product.id)"
+          class="order-now-delete"
+        >
+          delete
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="order-card">
+    <h3>Order Your Meals</h3>
+    <div class="meal">
+      <h3>tax 10$</h3>
+    </div>
+    <div class="summary">
+      <p>
+        Total Price:
+        <span id="total-price">{{ getTotalPrice() | currency : "USD" }}</span>
+      </p>
+    </div>
+    <button [routerLink]="['/pay']">pay</button>
+  </div>
+</div>
